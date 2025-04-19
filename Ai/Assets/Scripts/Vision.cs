@@ -13,7 +13,7 @@ public class VisionTracker : MonoBehaviour
 
     void Update()
     {
-        DetectTarget();
+        DetectTarget(); // calls detect targets script
     }
 
     void DetectTarget()
@@ -38,13 +38,13 @@ public class VisionTracker : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, viewRadius);
+        Gizmos.DrawWireSphere(transform.position, viewRadius); // draws view distance sphere
 
         Vector3 left = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
         Vector3 right = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, left * viewRadius);
+        Gizmos.DrawRay(transform.position, left * viewRadius); // draws the vision cone of the ais FOV
         Gizmos.DrawRay(transform.position, right * viewRadius);
     }
 }

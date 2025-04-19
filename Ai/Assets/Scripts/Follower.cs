@@ -3,8 +3,9 @@ using UnityEngine.AI;
 
 public class PathFollower : MonoBehaviour
 {
-    public Transform[] waypoints;
-    public float stoppingDistance = 0.5f;
+    public Transform[] waypoints; // public array to add way points for each follower path
+    public float stoppingDistance = 0.5f; // the amount over a waypoint that the ai registers as crossed. A buffer to make sure that the ai ,akes it to a said way point
+
 
     private NavMeshAgent navAgent;
     private int currentWaypointIndex = 0;
@@ -13,7 +14,7 @@ public class PathFollower : MonoBehaviour
 
     void Start()
     {
-        navAgent = GetComponent<NavMeshAgent>();
+        navAgent = GetComponent<NavMeshAgent>(); //grabs nav mesh 
 
         if (waypoints.Length > 0)
         {
