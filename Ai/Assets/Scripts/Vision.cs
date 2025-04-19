@@ -13,7 +13,7 @@ public class VisionTracker : MonoBehaviour
 
     void Update()
     {
-        DetectTarget(); // calls detect targets script
+        DetectTarget(); // calls detect targets function
     }
 
     void DetectTarget()
